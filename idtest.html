@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+</head>
+<body>
+<h1 id="Title">Attendance</h1><br>
+
+<p1 id = "device"></p1><br>
+<p1 id = "firstname"></p1><input type = "text" name = "NFN" id = "NewFirst" hidden> 
+<p1 id = "lastname"></p1><input type = "text" name = "NLN" id = "NewLast" hidden><input type = "button" name = "ND" id = "NewDevice" value = "I am registered under my old device." onclick = "NewDev();" hidden><input type = "button" name = "NS" id = "NewStudent" value = "I am not registered." onclick = "NewStd();" hidden><br>
+<p1 id = "psid"></p1><input type = "text" name = "UID" id = "StudentIDNumber" hidden><br>
+<p1 id = "course"></p1><input type = "button" name = "new1314" id = "NC1314" value = "MATH 1314" onclick = "CourseAdd(1314);" hidden><input type = "button" name = "new1342" id = "NC1342" value = "MATH 1342" onclick = "CourseAdd(1342);" hidden><input type = "button" name = "new9999" id = "NC9999" value = "Both Courses" onclick = "CourseAdd(9999);" hidden><input type = "text" name = "NCN" id = "CN" hidden><br>
+<p1 id = "location"></p1><br><br>
+<form id = "attForm" method = "post" action = "https://script.google.com/macros/s/AKfycbz3NGZPDM_m_hiSH_XXRIId3W_aCXCCYFjo_o4EaWDFygvq5vC11A5J_kgnIfcDWYsPwQ/exec">
+<input type = "hidden" name = "dev" id = "dev" value = "">
+<input type = "hidden" name = "fnm" id = "fnm" value = "">
+<input type = "hidden" name = "lnm" id = "lnm" value = "">
+<input type = "hidden" name = "id" id = "id" value = "">
+<input type = "hidden" name = "crs" id = "crs" value = "">
+<input type = "hidden" name = "date" id = "date" value = "">
+<input type = "hidden" name = "lat" id = "lat" value = "">
+<input type = "hidden" name = "lon" id = "lon" value = "">
+<input type = "hidden" name = "dst" id = "dst" value = "">
+<input type = "hidden" name = "urldate" id = "urldate" value = "">
+<input type = "submit" name = "Submit" id = "SubmitButton" value = "Click to Submit" hidden>
+</form>
+<input type = "button" name = "Start" id = "MagicButton" value = "Click to Start" onclick = "identify(0);"><input type = "button" name = "Cont" id = "MysticButton" value = "Click to Start Over" onclick = "identify(1);" hidden><input type = "button" name = "TaDA" id = "MysteriousButton" value = "Click to Start Over" onclick = "identify(2);" hidden>
+<p1 id = "firstline"></p1><input type = "button" name ="addButt" id = "AddStuds" value = "Click to Add More Students" onclick = "MoStu();" hidden>
+<input type = "text" name = "appendix" id = "appcode" value = "Do Not Touch"><br><br>
+
+	<p1 id = "secondline"></p1>
+	<p1 id = "thirdline"></p1><br>
+	<input type = "button" name ="Creation" id = "Godlike" value = "Create New Students" onclick = "GiveLife();" hidden>
+	<p1 id = "fourthline"></p1> <br><br>
+	<p1 id = "devch"></p1><br>
+	<p1 id = "firch"></p1><br>
+	<p1 id = "lasch"></p1><br>
+	<p1 id = "idnch"></p1><br>
+	<p1 id = "crsch"></p1>
+
+	<input type = "text" name = "newstudent0" id = "newstudent0" value = "" hidden><br><input type = "text" name = "newstudent1" id = "newstudent1" value = "" hidden><br><input type = "text" name = "newstudent2" id = "newstudent2" value = "" hidden><br><input type = "text" name = "newstudent3" id = "newstudent3" value = "" hidden><br><input type = "text" name = "newstudent4" id = "newstudent4" value = "" hidden><br><input type = "text" name = "newstudent5" id = "newstudent5" value = "" hidden><br><input type = "text" name = "newstudent6" id = "newstudent6" value = "" hidden><br><input type = "text" name = "newstudent7" id = "newstudent7" value = "" hidden><br><input type = "text" name = "newstudent8" id = "newstudent8" value = "" hidden><br><input type = "text" name = "newstudent9" id = "newstudent9" value = "" hidden><br>
+	<input type = "text" name = "newstudent10" id = "newstudent10" value = "" hidden><br><input type = "text" name = "newstudent11" id = "newstudent11" value = "" hidden><br><input type = "text" name = "newstudent12" id = "newstudent12" value = "" hidden><br><input type = "text" name = "newstudent13" id = "newstudent13" value = "" hidden><br><input type = "text" name = "newstudent14" id = "newstudent14" value = "" hidden><br><input type = "text" name = "newstudent15" id = "newstudent15" value = "" hidden><br><input type = "text" name = "newstudent16" id = "newstudent16" value = "" hidden><br><input type = "text" name = "newstudent17" id = "newstudent17" value = "" hidden><br><input type = "text" name = "newstudent18" id = "newstudent18" value = "" hidden><br><input type = "text" name = "newstudent19" id = "newstudent19" value = "" hidden><br>
+	<input type = "text" name = "newstudent20" id = "newstudent20" value = "" hidden><br><input type = "text" name = "newstudent21" id = "newstudent21" value = "" hidden><br><input type = "text" name = "newstudent22" id = "newstudent22" value = "" hidden><br><input type = "text" name = "newstudent23" id = "newstudent23" value = "" hidden><br><input type = "text" name = "newstudent24" id = "newstudent24" value = "" hidden><br><input type = "text" name = "newstudent25" id = "newstudent25" value = "" hidden><br><input type = "text" name = "newstudent26" id = "newstudent26" value = "" hidden><br><input type = "text" name = "newstudent27" id = "newstudent27" value = "" hidden><br><input type = "text" name = "newstudent28" id = "newstudent28" value = "" hidden><br><input type = "text" name = "newstudent29" id = "newstudent29" value = "" hidden><br>
+	<input type = "text" name = "newstudent30" id = "newstudent30" value = "" hidden><br><input type = "text" name = "newstudent31" id = "newstudent31" value = "" hidden><br><input type = "text" name = "newstudent32" id = "newstudent32" value = "" hidden><br><input type = "text" name = "newstudent33" id = "newstudent33" value = "" hidden><br><input type = "text" name = "newstudent34" id = "newstudent34" value = "" hidden><br><input type = "text" name = "newstudent35" id = "newstudent35" value = "" hidden><br><input type = "text" name = "newstudent36" id = "newstudent36" value = "" hidden><br><input type = "text" name = "newstudent37" id = "newstudent37" value = "" hidden><br><input type = "text" name = "newstudent38" id = "newstudent38" value = "" hidden><br><input type = "text" name = "newstudent39" id = "newstudent39" value = "" hidden><br>
+	<input type = "text" name = "newstudent40" id = "newstudent40" value = "" hidden><br><input type = "text" name = "newstudent41" id = "newstudent41" value = "" hidden><br><input type = "text" name = "newstudent42" id = "newstudent42" value = "" hidden><br><input type = "text" name = "newstudent43" id = "newstudent43" value = "" hidden><br><input type = "text" name = "newstudent44" id = "newstudent44" value = "" hidden><br><input type = "text" name = "newstudent45" id = "newstudent45" value = "" hidden><br><input type = "text" name = "newstudent46" id = "newstudent46" value = "" hidden><br><input type = "text" name = "newstudent47" id = "newstudent47" value = "" hidden><br><input type = "text" name = "newstudent48" id = "newstudent48" value = "" hidden><br><input type = "text" name = "newstudent49" id = "newstudent49" value = "" hidden>
+
+</body>
+
+<script type="text/JavaScript">
+
+	navigator.geolocation.getCurrentPosition(showPosition); 
+
+	function showPosition(position) {
+		document.getElementById("lat").value = position.coords.latitude;
+		document.getElementById("lon").value = position.coords.longitude; }
+
+const urldatecodes =["4090UYG08","G2W19YG4PM8U7J","22JYGUW72265","276AJ69UWJ70","37456U04AP1","6P68WJWP8","J5D9SA06","JMU02JU4","J02M44","Y6864","585D5","7SJWDA4J1","12YJD","96M1865SYW","73YA81S28YYS5","S79MPJD5","2049U","S5A6P2DP98","8SP59JA8JD44D","JYSJ8W","35S1J383W6AAP","36AY85","Y97YJ80W4WU2","UAWW0JA4W9","6J8SG4","8452539UMP4MG","830566037DGYJ","JP705","147WAW5385A3","DSM95742GWP14","UG407WJMS751","2YUM48775","5Y079G8GD3J79","6G22M58767693","415MD98G2SG1","481W4JYMJU17M3","PSP9G","808SY3PYS4J","J674PAJ52AP","M89746413","G0S91P1MMU","JJ57920","P22J16","PAPS5W72Y3U","JSM7A09"];
+const device = ["15010064649302010010193001080192024"];
+const psid = ["9012345"];
+const first = ["46106767312276"];
+const last = ["242050605848"];
+const course = ["9999"];
+console.log(device);
+console.log(urldatecodes);
+console.log(psid);
+console.log(first);
+console.log(last);
+console.log(course);
+
+function identify(n) {
+
+	var navigator_info = window.navigator;
+	var screen_info = window.screen;
+	var uid = navigator_info.mimeTypes.length;
+	uid += navigator_info.userAgent.replace(/\D+/g,'');
+	uid += navigator_info.plugins.length;
+	uid += screen_info.height || '';
+	uid += screen_info.width || '';
+	uid += screen_info.pixelDepth ||'';
+	console.log(uid);
+
+	const queryString = window.location.search;
+	console.log(queryString);
+	const urlParams = new URLSearchParams(queryString);
+	const datecode = urlParams.get('dc');
+	console.log(datecode);
+
+	var d = new Date();
+	var mm = d.getMonth() + 1;
+	var dd = d.getDate();
+	var yyyy = d.getYear() + 1900;
+	var hh = d.getHours();
+
+	if ( mm < 10 ) { mm = "0" + String(mm); }
+	if ( dd < 10 ) { dd = "0" + String(dd); }
+
+	var attdate = String(mm) + String(dd) + String(yyyy);
+	var startdate = "07112022";
+	var meetingDaysWk = 5;
+	var totalClasses = 25;
+
+	var startdate2000 = datingGame(startdate);
+	var attdate2000 = datingGame(attdate);
+
+	var daysin = attdate2000 - startdate2000;
+	var daysquot = Math.floor(daysin / 7);
+	var daysrem = daysin - daysquot;
+	var classDay = 5 * daysquot + daysrem;
+	var encodedclassday = urldatecodes[classDay];
+
+	var safetyNet = document.getElementById("appcode").value;
+	if ( safetyNet === "ClassAdd" ) { classAdd(); }
+	if ( safetyNet === "DateSave" || safetyNet === "ClassAdd" ) { document.getElementById("MagicButton").value = "You Have Been Spared"; }
+		else { 
+
+	if ( hh < 9 || hh > 15 ) { 	window.alert("Attendance may only be posted one hour before to one hour after class.");
+					document.getElementById("SubmitButton").disabled = true;
+					window.close(); }
+
+	if ( attdate2000 < startdate2000 || classDay > 25 ) {	window.alert("Attendance may only be posted on a day class is scheduled to meet."); 
+								document.getElementById("SubmitButton").disabled = true;
+								window.close();}
+	var dateTesterA = (attdate2000 - 2) / 7;
+	var dateTesteeA = Math.floor(dateTesterA);
+	var dateTesterB = (attdate2000 - 3) / 7;
+	var dateTesteeB = Math.floor(dateTesterB);
+
+	if ( dateTesterA === dateTesteeA || dateTesterB === dateTesteeB ) {	window.alert("Attendance may only be posted on a day class is scheduled to meet."); 
+										document.getElementById("SubmitButton").disabled = true; 
+										window.close(); }}
+
+	var classSize = first.length;
+	var NUser = 1;
+
+if ( n === 0 ) {
+		for ( p = 0; p < classSize; p++ ) {
+			if ( device[p] === uid ) {	var deviceID = device[p];
+							var firstname = first[p];
+							var lastname = last[p];
+							var idnumber = psid[p];
+							var courseNumber = course[p];
+							NUser = 0; }}}
+
+if ( n === 1 ) {
+	document.getElementById("SubmitButton").disabled = false; 
+	var idnumber = document.getElementById("StudentIDNumber").value;
+	document.getElementById("MysticButton").hidden = true;
+	document.getElementById("StudentIDNumber").hidden = true;
+	const idd = idnumber.split("");
+
+	for ( j = 0; j < 7; j++ ) {
+		var temp = parseInt(idd[j]);
+		if ( temp < 2 ) { idd[j] = String(temp + 8); }
+			else { idd[j] = String(temp - 2); }}
+
+	idnumber = idd.join('');
+	var deviceID = "D" + uid;
+		for ( t = 0; t < classSize; t++) {
+			if ( psid[t] === idnumber ) {	var firstname = first[t];
+							var lastname = last[t];
+							var courseNumber = course[t];
+							device[t] = deviceID; 
+							NUser = 0; }}}
+if ( n === 2 ) {
+	document.getElementById("SubmitButton").disabled = false; 
+	var firstname = document.getElementById("NewFirst").value;
+	var lastname = document.getElementById("NewLast").value;
+	var idnumber = document.getElementById("StudentIDNumber").value;
+	var courseNumber = document.getElementById("CN").value;
+	document.getElementById("CN").hidden = true;
+	document.getElementById("StudentIDNumber").hidden = true;
+	document.getElementById("NewFirst").hidden = true;
+	document.getElementById("NewLast").hidden = true;
+	document.getElementById("MysteriousButton").hidden = true;
+
+	const idd = idnumber.split("");
+	for ( k = 0; k < 7; k++ ) {
+		var temp = parseInt(idd[k]);
+		if ( temp < 2 ) { idd[k] = String(temp + 8); }
+			else { idd[k] = String(temp - 2); }}
+	idnumber = idd.join('');
+
+	const fnd = firstname.split("");
+	for ( l = 0; l < fnd.length; l++ ) {
+		var tempA = let2num(fnd[l]);
+		var temp = 3 * parseInt(tempA) + 7;
+		fnd[l] = String(temp); }
+	firstname = fnd.join('');
+
+	const lnd = lastname.split("");
+	for ( m = 0; m < lnd.length; m++ ) {
+		var tempB = let2num(lnd[m]);
+		var tempb = 2 * parseInt(tempB) + 18;
+		lnd[m] = String(tempb); }
+	lastname = lnd.join('');
+
+	var deviceID = "S" + uid;
+	first[classSize] = firstname;
+	last[classSize] = lastname;
+	psid[classSize] = idnumber;
+	course[classSize] = courseNumber;
+	device[classSize] = deviceID; 
+	NUser = 0; }
+
+if ( NUser === 1 ) { newUser(uid); }
+
+	const firstdigs = firstname.split("");
+	const lastdigs = lastname.split("");
+	const iddigs = idnumber.split("");
+
+	var flamingo = Math.max(firstdigs.length / 2, lastdigs.length / 2, iddigs.length);
+	var fname = "";
+	var lname = "";
+
+	for ( f = 0; f < flamingo; f++ ) {
+		if ( f < firstdigs.length / 2 ) {
+			var twofir = parseInt(firstdigs[2 * f] + firstdigs[2 * f + 1]);
+			var Sfvar = (twofir - 7) / 3;
+			if ( Sfvar < 10 ) { var Sfnum = "0" + String(Sfvar); }
+			else { var Sfnum = String(Sfvar); }
+			var fname = fname + letterFnum(Sfnum); }
+		if ( f < lastdigs.length / 2 ) {
+			var twolas = parseInt(lastdigs[2 * f] + lastdigs[2 * f + 1]);
+			var Slvar = (twolas - 18) / 2;
+			if ( Slvar < 10 ) { var Slnum = "0" + String(Slvar); }
+			else { var Slnum = String(Slvar); }
+			var lname = lname + letterFnum(Slnum); }
+		if ( f < iddigs.length ) {
+			if ( iddigs[f] > 7 ) { 	var temp = parseInt(iddigs[f]) - 8;
+						iddigs[f] = String(temp); }
+			else {	var temp = parseInt(iddigs[f]) + 2;
+				iddigs[f] = String(temp); }}}
+
+	var idn = iddigs.join('');
+
+	document.getElementById("device").innerHTML = "Device ID: " + deviceID;
+	document.getElementById("firstname").innerHTML = "Name: " + fname;
+	document.getElementById("lastname").innerHTML = " " + lname;
+	document.getElementById("psid").innerHTML = "University ID: " + idn;
+	if ( courseNumber === "9999" ) { courseNumber = "1314 and MATH 1342"; }
+	document.getElementById("course").innerHTML = "Course: MATH " + courseNumber;
+	var latitA = document.getElementById("lat").value;
+	var longonA = document.getElementById("lon").value;
+	var latit = parseInt(latitA * 10000000000) / 10000000000;
+	if (latit < 0) { var latitS = String(-1 * latit) + "S"; }
+		else {var latitS = String(latit) + "N"; }
+	var longon = parseInt(longonA * 10000000000) / 10000000000;
+	if (longon < 0) { var longonS = String(-1 * longon) + "W"; }
+		else {var longonS = String(longon) + "E"; }
+	var distancesqlat = Math.pow((29.723542690257382 - latit) * 60, 2);
+	var distancesqlon = Math.pow((-95.34555914715773 - longon) * 56.4,2);
+	var distA = Math.pow(distancesqlat + distancesqlon, 0.5);
+	if (distA < 0.25) {var dist = Math.floor(distA * 56800) / 10; 
+				var unit = " feet"; }
+		else { 	var dist = Math.floor(distA * 10000) / 10000;
+			var unit = " miles"; } 
+	document.getElementById("location").innerHTML = latitS + " degrees by " + longonS + " degrees which is " + dist + unit + " from our classroom";  
+
+	document.getElementById("MagicButton").hidden = true;
+	document.getElementById("SubmitButton").hidden = false;
+
+document.getElementById("dev").value = deviceID;
+document.getElementById("fnm").value = fname;
+document.getElementById("lnm").value = lname;
+document.getElementById("id").value = id;
+document.getElementById("crs").value = crs;
+document.getElementById("date").value = date;
+document.getElementById("dst").value = distance;
+document.getElementById("urldate").value = encodedclassday;} 
+
+function datingGame(d) {
+	const priorDaysM = [0,31,59,90,120,151,181,212,243,273,304,334];
+	const datum = d.split("");
+	var anosA = datum[4] + datum[5] + datum[6] + datum[7];
+	var anos = parseInt(anosA);
+	var calendario = datum[2] + datum[3];
+	var menos = datum[0] + datum[1];
+
+	var yearsout = (anos - 2001) / 4;
+	var quot = Math.floor(yearsout);
+	var rem = anos - (4 * quot);
+	var totYD = 1461 * (quot + 1) + 365 * rem;
+	if ( rem === 0 && parseInt(menos) > 1) {	var monspnt = priorDaysM[parseInt(menos)] + 1;	}
+						else {	var monspnt = priorDaysM[parseInt(menos)];	}
+	var totDays = parseInt(calendario) + monspnt + totYD;
+return totDays; }
+
+function classAdd() {
+	document.getElementById("firstline").innerHTML = "How many new students do you need to add to your attendance roster?<br><br>Enter any whole number (no fractions or percentages of students) from 0 [I entered this subroutine by mistake], 1 [I have one new student just added], 2 [I have one new set of twins just added], ..., 50 [I got a whole new class....if your class is larger than 50, you can enter more after these.]";
+	document.getElementById("appcode").value = "Enter your number answer";
+	document.getElementById("AddStuds").hidden = false; }
+
+function MoStu() {
+	document.getElementById("firstline").innerHTML = "";
+	var newbies = document.getElementById("appcode").value;	
+	for ( s = 0; s < parseInt(newbies); s++ )  {
+		var madIndex = "newstudent" + String(s);
+		document.getElementById(madIndex).hidden = false; }
+		document.getElementById("secondline").innerHTML = "<br>Enter one new student's information in each textbox below in the following format: DeviceID,FirstName,LastName,UniversityIDNumber,CourseNumber(justnumbers,noMATH)<br>So for a new student, Thomas Edison, with device ID of 1, a university ID 7142128, and enrolled in MATH 31415, you would enter: 1,Thomas,Edison,7142128,31415   This should be exactly how this information should be displayed in the NewStudentInput column of the attendance spreadsheet. <br>";
+		document.getElementById("thirdline").innerHTML = "Then just click the Create New Students button."; 
+		document.getElementById("AddStuds").hidden = true;
+		document.getElementById("Godlike").hidden = false;
+		document.getElementById("appcode").hidden = true; }
+
+function GiveLife()  {
+	document.getElementById("firstline").innerHTML = "";
+	document.getElementById("secondline").innerHTML = "";
+	document.getElementById("thirdline").innerHTML = "";
+	document.getElementById("Godlike").hidden = true;
+	document.getElementById("fourthline").innerHTML = "<br>Open this HTML file as a text file, swap out the similar lines with the ones displayed, and save.";
+
+	var newSt = first.length;
+	var LargerClass = newSt;
+
+	for ( v = 0; v < 50; v++ )  {
+		var newIndex = newSt + v; 
+
+			var nd  = "";
+			var nf = "";
+			var nl = "";
+			var ni = "";
+			var nc = "";
+
+			var newInput = "newstudent" + String(v);
+			var stringCheese = document.getElementById(newInput).value;
+
+		if (stringCheese === "" ) { document.getElementById(newInput).hidden = true; }
+		else {	LargerClass = LargerClass + 1;
+
+			const ManyLetters = stringCheese.split("");
+			var CommaInd = 0;
+
+			for ( ML = 0; ML < ManyLetters.length; ML++ ) {
+				if ( ManyLetters[ML] === "," ) { CommaInd = CommaInd + 1; } 
+					else {
+				if ( CommaInd === 0 ) { nd = nd + ManyLetters[ML]; }
+				if ( CommaInd === 1 ) { nf = nf + ManyLetters[ML]; }
+				if ( CommaInd === 2 ) { nl = nl + ManyLetters[ML]; }
+				if ( CommaInd === 3 ) { ni = ni + ManyLetters[ML]; }
+				if ( CommaInd === 4 ) { nc = nc + ManyLetters[ML]; } } } 
+		device[newIndex] = nd;
+		psid[newIndex] = ni;
+		first[newIndex] = nf;
+		last[newIndex] = nl;
+		course[newIndex] = nc; } 
+		document.getElementById(newInput).hidden = true; }
+
+	var newDev = "const device = [";
+	var newID = "const psid = [";
+	var newFirst = "const first = [";
+	var newLast = "const last = [";
+	var newCourse = "const course = [";
+
+	for ( z = 0; z < LargerClass; z++ ) {
+
+		if ( z === 0 ) {
+			newDev = newDev + "\"" + device[0] + "\"";
+			newID = newID + "\"" + psid[0] + "\""
+			newFirst = newFirst + "\"" + first[0] + "\"";
+			newLast = newLast + "\"" + last[0] + "\"";
+			newCourse = newCourse + "\"" + course[0] + "\""; }
+		else {
+			newDev = newDev + ",\"" + device[z] + "\"";
+			newID = newID + ",\"" + psid[z] + "\""
+			newFirst = newFirst + ",\"" + first[z] + "\"";
+			newLast = newLast + ",\"" + last[z] + "\"";
+			newCourse = newCourse + ",\"" + course[z] + "\""; } }
+
+	
+	newDev = newDev + "];";
+	newID = newID + "];";
+	newFirst = newFirst + "];";
+	newLast = newLast + "];";
+	newCourse = newCourse + "];"; 
+
+	document.getElementById("devch").innerHTML = newDev;
+	document.getElementById("firch").innerHTML = newFirst;
+	document.getElementById("lasch").innerHTML = newLast;
+	document.getElementById("idnch").innerHTML = newID;
+	document.getElementById("crsch").innerHTML = newCourse;  }
+
+function newUser(d) {
+	document.getElementById("device").innerHTML = "Device ID: " + d;
+	document.getElementById("firstname").innerHTML = "Your device is not registered.";
+	document.getElementById("lastname").innerHTML = " Select one of the two options here: ";
+	document.getElementById("NewDevice").hidden = false;
+	document.getElementById("NewStudent").hidden = false;
+	document.getElementById("MagicButton").disabled = true; }
+
+function NewDev() {
+	document.getElementById("firstname").innerHTML = "";
+	document.getElementById("lastname").innerHTML = "";
+	document.getElementById("NewDevice").hidden = true;
+	document.getElementById("NewStudent").hidden = true;
+	document.getElementById("psid").innerHTML = "Enter your University ID Number: ";
+	document.getElementById("StudentIDNumber").hidden = false;
+	document.getElementById("MagicButton").hidden = true;
+	document.getElementById("MysticButton").hidden = false; }
+
+function NewStd() {
+	document.getElementById("firstname").innerHTML = "Enter your First Name: ";
+	document.getElementById("lastname").innerHTML = " and your Last Name: ";
+	document.getElementById("NewDevice").hidden = true;
+	document.getElementById("NewStudent").hidden = true;
+	document.getElementById("psid").innerHTML = "Enter your University ID Number: ";
+	document.getElementById("course").innerHTML = "Click the Button for your Course Option: ";
+	document.getElementById("NC1314").hidden = false;
+	document.getElementById("NC1342").hidden = false;
+	document.getElementById("NC9999").hidden = false;
+	document.getElementById("StudentIDNumber").hidden = false;
+	document.getElementById("NewFirst").hidden = false;
+	document.getElementById("NewLast").hidden = false;
+	document.getElementById("MagicButton").hidden = true;
+	document.getElementById("MysticButton").hidden = true;
+	document.getElementById("MysteriousButton").hidden = false; }
+
+function CourseAdd(m) {
+	if ( String(m) === "9999") { var boxValue = "Both MATH 1314 and MATH 1342"; }
+	else { var boxValue = "MATH " + String(m); }
+	document.getElementById("CN").value = m; 
+	document.getElementById("course").innerHTML = boxValue;	
+	document.getElementById("NC1314").hidden = true;
+	document.getElementById("NC1342").hidden = true;
+	document.getElementById("NC9999").hidden = true;}
+
+function let2num(a) {
+	if( a === "A"||a ==="a"){var numFlet = "01";}
+	else { if( a === "B"||a ==="b"){var numFlet = "02";}
+	else {if( a === "C"||a ==="c"){var numFlet = "03";}
+	else { if( a === "D"||a ==="d"){var numFlet = "04";}
+	else { if( a === "E"||a ==="e"){var numFlet = "05";}
+	else { if( a === "F"||a ==="f"){var numFlet = "06";}
+	else { if( a === "G"||a ==="g"){var numFlet = "07";}
+	else { if( a === "H"||a ==="h"){var numFlet = "08";}
+	else { if( a === "I"||a ==="i"){var numFlet = "09";}
+	else { if( a === "J"||a ==="j"){var numFlet = "10";}
+	else { if( a === "K"||a ==="k"){var numFlet = "11";}
+	else { if( a === "L"||a ==="l"){var numFlet = "12";}
+	else { if( a === "M"||a ==="m"){var numFlet = "13";}
+	else { if( a === "N"||a ==="n"){var numFlet = "14";}
+	else { if( a === "O"||a ==="o"){var numFlet = "15";}
+	else { if( a === "P"||a ==="p"){var numFlet = "16";}
+	else { if( a === "Q"||a ==="q"){var numFlet = "17";}
+	else { if( a === "R"||a ==="r"){var numFlet = "18";}
+	else { if( a === "S"||a ==="s"){var numFlet = "19";}
+	else { if( a === "T"||a ==="t"){var numFlet = "20";}
+	else { if( a === "U"||a ==="u"){var numFlet = "21";}
+	else { if( a === "V"||a ==="v"){var numFlet = "22";}
+	else { if( a === "W"||a ==="w"){var numFlet = "23";}
+	else { if( a === "X"||a ==="x"){var numFlet = "24";}
+	else { if( a === "Y"||a ==="y"){var numFlet = "25";}
+	else { if( a === "Z"||a ==="z"){var numFlet = "26";}
+	else { var numFlet = "00";}}}}}}}}}}}}}}}}}}}}}}}}}}
+	return numFlet; }
+
+function letterFnum(a) {
+	if (a === "00") { var daLetter = " "; }
+	if (a === "01") { var daLetter = "A"; }
+	if (a === "02") { var daLetter = "B"; }
+	if (a === "03") { var daLetter = "C"; }
+	if (a === "04") { var daLetter = "D"; }
+	if (a === "05") { var daLetter = "E"; }
+	if (a === "06") { var daLetter = "F"; }
+	if (a === "07") { var daLetter = "G"; }
+	if (a === "08") { var daLetter = "H"; }
+	if (a === "09") { var daLetter = "I"; }
+	if (a === "10") { var daLetter = "J"; }
+	if (a === "11") { var daLetter = "K"; }
+	if (a === "12") { var daLetter = "L"; }
+	if (a === "13") { var daLetter = "M"; }
+	if (a === "14") { var daLetter = "N"; }
+	if (a === "15") { var daLetter = "O"; }
+	if (a === "16") { var daLetter = "P"; }
+	if (a === "17") { var daLetter = "Q"; }
+	if (a === "18") { var daLetter = "R"; }
+	if (a === "19") { var daLetter = "S"; }
+	if (a === "20") { var daLetter = "T"; }
+	if (a === "21") { var daLetter = "U"; }
+	if (a === "22") { var daLetter = "V"; }
+	if (a === "23") { var daLetter = "W"; }
+	if (a === "24") { var daLetter = "X"; }
+	if (a === "25") { var daLetter = "Y"; }
+	if (a === "26") { var daLetter = "Z"; }
+return daLetter; }
+
+</script>
+</body>
+</html>
